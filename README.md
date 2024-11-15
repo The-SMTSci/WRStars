@@ -8,7 +8,8 @@ der Hucht, 2006).
 
 The wrstars is a simbad tap query from TOPCAT.
 
-https://github.com/The-SMTSci/WRStars/blob/main/images/AladinColorCatalog_atoff.jpeg
+![AladinColorCatalog_atoff](https://github.com/user-attachments/assets/94c406b5-d7bd-41fc-a7a9-1c0b7821f3f7)
+
 
 The red stars are taken from SIMBAD where the object type mentions WR stars.
 
