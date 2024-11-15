@@ -8,3 +8,8 @@ der Hucht, 2006).
 
 The wrstars is a simbad tap query from TOPCAT.
 
+![AladinColorCatalog_atoff](https://github.com/user-attachments/assets/1a350db3-26a6-4867-b42c-97184ddf1135)
+
+The red stars are taken from SIMBAD where the object type mentions WR stars.
+
+Note: The stars are mostly confined to the galactic plane (Milky Way). 
