@@ -89,6 +89,40 @@
 %% (wg-latex-pretty-title-page)
 %% (wg-texdoc-titleblock)
 
+
+\title{Line Monitoring of elected Wolf-Rayet Southern Hemisphere Star Monitoring Campaign}
+\author{Wayne Green, John Wetmore, Anthony Rodda}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+
+We conducted a campaign of low resolution (R~1800) spectrographic
+observations of a selected list of brighter southern hemisphere
+Wolf-Rayet and O(f) stars using the FlexSpec1/600 and FlexSpec1/900
+spectrographs with the Watson 24-inch CDK telescope located at the
+Obstech observatory complex in Chile. This paper reports some
+preleminary results from the on-going campaign. In this paper we
+discuss the observational procedure, some of the issues encountered,
+reduction approaches and techniques. The authors are grateful for the
+generous allotment of time with Dr. Stan Watson's telescope
+facilities.
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\pagenumbering{roman}   % i,ii,etc
+%%\pagenumbering{gobble}   %ignore page numbers for a while
+\pdfbookmark[0]{Table of Contents}{MyTOC} % if usepackage{hyperref} in use.
+%%\tableofcontents
+%%\listoffigures
+%%\listoftables
+%%\newpage
+
+
 \setcounter{section}{0}
 \pagenumbering{arabic}
 
@@ -97,6 +131,58 @@
 \fi
 
 \section{Overview}
+
+A campaign of observing bright Wolf-Rayet stars, magnitudes < 11.0
+and declinations < -5 degrees was conducted using the custom FlexSpec1
+R\textasciitilde 1100 spectrograph mounted to a Planewave CDK-24 on
+an L600 mount located at Obstech Observatory, Chile. Early in the
+project we added a R\textasciitilde 150 spectrgraph in anticipation
+of observing fainter targets. Both instruments use a QHY 268M camera.
+
+We share the telescope with top amateur LGRB imagers, and made our
+observations during the bright-time , 10-day interval around full moon.
+We start with targets in the west, work backwards towards the meridian,
+and spend the most time on the meridian. We observed our target stars on
+every clear night - airmass permitting.
+
+\ltodo{A0V paper}{Get title and bib ref}.
+
+As part of this campaign, we used available A0V stars as references. The
+reference stars are covered in the accompanying paper. 
+
+Targets were selected using a SIMBAD query for WR stars, conditioned
+and saved in a comma-separated-file. This file was loaded into TOPCAT,
+extended with the SIMBAD cross-match tool. Selected targets were written
+to a PostgreSQL database. A similar technique compiled the AOV stars.
+During observations, the two tables were sent to Aladin using the 
+TOPCAT interop functionality. The ra/dec were cross tied to the tables
+such that selecting a star in the table would position Aladin to the field
+and vice-versa. In Aladin, target stars were denoted with large, solid
+red circles where reference stars were indicated with large, solid blue
+circles. The reference stars were chosen by zooming out in Aladin
+where the DSS color image was the default image used. This provided
+a subject guess to extinction for the WR stars and helped to avoid
+the inevitable crowded fields. Additional overlays of dim Gaia stars
+help reject candidates with possible slit contamination. The star
+pairs were recorded in one table together with the exposure time sequences.
+
+The main computer for the telescope is a Windows 11 based environment to
+meet ASCOM requirements for the equipment. Remote operations were done in
+real-time using the RVNC viewer. We later switched to TightVNC and Tailscale.
+Two shared folders were created allowing access of files in Chile by
+observers in Chile and England. This allowed Linux based analysis tools
+to bear for quick checks of the data. We used SAOImage ds9 to examine
+images via the VNC link. This saved us early on, as the magnitudes of
+some emission features saturated, where the continuum was well within
+limits. In these cases we took short exposures to fix the flux of
+bright features and longer exposures to bring out lesser line details.
+
+Recently we changed the R1100 spectrograph, to use a 1800 lmm grating
+giving a R3200. 
+
+Here we present the results for one star while emphasizing the equipment
+and techniques.
+
 
 2024-07-31T20:43:43-0600
 
@@ -111,10 +197,6 @@ Most stars are well suited to summer/fall observations.
 
 \begin{figure}[h!]
 \centering
-%%\phantomsection
-%%\addcontentsline{toc}{section}{}
-%%\caption{} %% \caption{{\tiny{citation}}} 
-%%\includepdf[angle=90,width=\textwidth]{}); %% with package pdfpages
 \includegraphics[width=\textwidth]{images/WRHistogram.png}
 \caption{Histogram of WR stars in catalog.} %% \caption{{\tiny{citation}}} 
 \label{figure:histogram}
@@ -125,10 +207,6 @@ Most stars are well suited to summer/fall observations.
 \begin{landscape}
 \begin{figure}[h!]
 \centering
-%%\phantomsection
-%%\addcontentsline{toc}{section}{}
-%%\caption{} %% \caption{{\tiny{citation}}} 
-%%\includepdf[angle=90,width=\textwidth]{}); %% with package pdfpages
 \includegraphics[width=\textheight]{images/WRAtoff.png}
 \caption{Sky location of 1,695 star.} %% \caption{{\tiny{citation}}} 
 \label{figure:atoff-diagram}
